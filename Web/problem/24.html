@@ -1,0 +1,60 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel=stylesheet href='./include/hoj.css' type='text/css'>
+</head>
+<body>
+<div id=profile >
+<script src="include/profile.php" ></script>
+</div><!--end profile-->
+<div  id=xx_logo ><img src=./image/xx_logo.jpg></div>
+<table width=100% class=toprow style="position:absolute; top: 120px; left: 0px"><tr align=center>
+	<td width=15%><a class=hd href='./'>Home</a>
+	<td width=15%><a class=hd href='./bbs.php?cid=1006'>Web Board</a>
+	<td width=15%><a class=hd href='./contest.php?cid=1006'>ProblemSet</a>
+	<td width=15%><a class=hd href='./contestrank.php?cid=1006'>Standing</a>
+	<td width=15%><a class=hd href='./status.php?cid=1006'>Status</a>
+	<td width=15%><a class=hd href='./conteststatistics.php?cid=1006'>Statistics</a>
+</tr></table>
+
+
+<div id=main>
+<title>Problem 24: 一元三次方程求解 </title><center><h2>Problem 24: 一元三次方程求解</h2><span class=green>Time Limit: </span>2 Sec&nbsp;&nbsp;<span class=green>Memory Limit: </span>128 MB<br><span class=green>Submit: </span>45&nbsp;&nbsp;<span class=green>Solved: </span>15<br>[<a href='submitpage.php?cid=1006&pid=24&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1061'>Status</a>][<a href='bbs.php?pid=1061&cid=1006'>Web Board</a>]</center><h2>Description</h2><div class=content><div align="left"><span style="color: #333333; font-size: 13pt">有形如：</span><span style="color: #333333; font-size: 13pt">ax</span><sup><span style="color: #333333; font-size: 10pt">3</span></sup><span style="color: #333333; font-size: 13pt">+bx</span><sup><span style="color: #333333; font-size: 10pt">2</span></sup><span style="color: #333333; font-size: 13pt">+cx+d=0&nbsp;&nbsp;</span><span style="color: #333333; font-size: 13pt">这样的一个一元三次方程。给出该方程中各项的系数</span><span style="color: #333333; font-size: 13pt">(a</span><span style="color: #333333; font-size: 13pt">，</span><span style="color: #333333; font-size: 13pt">b</span><span style="color: #333333; font-size: 13pt">，</span><span style="color: #333333; font-size: 13pt">c</span><span style="color: #333333; font-size: 13pt">，</span><span style="color: #333333; font-size: 13pt">d&nbsp;&nbsp;</span><span style="color: #333333; font-size: 13pt">均为实数</span><span style="color: #333333; font-size: 13pt">)</span><span style="color: #333333; font-size: 13pt">，并约定该方程存在三个不同实根</span><span style="color: #333333; font-size: 13pt">(</span><span style="color: #333333; font-size: 13pt">根的范围在</span><span style="color: #333333; font-size: 13pt">-100</span><span style="color: #333333; font-size: 13pt">至</span><span style="color: #333333; font-size: 13pt">100</span><span style="color: #333333; font-size: 13pt">之间</span><span style="color: #333333; font-size: 13pt">)</span><span style="color: #333333; font-size: 13pt">，且根与根之差的绝对值</span><span style="color: #333333; font-size: 13pt">&gt;=1</span><span style="color: #333333; font-size: 13pt">。要求由小到大依次在同一行输出这三个实根</span><span style="color: #333333; font-size: 13pt">(</span><span style="color: #333333; font-size: 13pt">根与根之间留有空格</span><span style="color: #333333; font-size: 13pt">)</span><span style="color: #333333; font-size: 13pt">，并精确到小数点后</span><span style="color: #333333; font-size: 13pt">2</span><span style="color: #333333; font-size: 13pt">位。</span></div>
+<div align="left"></div></div><h2>Input</h2><div class=content><p><span style="font-family: 宋体; color: #333333; font-size: 13pt; mso-ascii-font-family: Helvetica; mso-hansi-font-family: Helvetica; mso-bidi-font-family: Helvetica; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">输入</span><span lang="EN-US" style="font-family: Helvetica; color: #333333; font-size: 13pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">n</span><span style="font-family: 宋体; color: #333333; font-size: 13pt; mso-ascii-font-family: Helvetica; mso-hansi-font-family: Helvetica; mso-bidi-font-family: Helvetica; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">，表示下面有</span><span lang="EN-US" style="font-family: Helvetica; color: #333333; font-size: 13pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">n</span><span style="font-family: 宋体; color: #333333; font-size: 13pt; mso-ascii-font-family: Helvetica; mso-hansi-font-family: Helvetica; mso-bidi-font-family: Helvetica; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">行数据；每行都包含四个实数，分别表示一元三次方程的各项系数。</span></p></div><h2>Output</h2><div class=content><p><span style="font-family: 宋体; color: #333333; font-size: 13pt; mso-ascii-font-family: Helvetica; mso-hansi-font-family: Helvetica; mso-bidi-font-family: Helvetica; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">每个方程的三个解，每个解精确到小数点后</span><span lang="EN-US" style="font-family: Helvetica; color: #333333; font-size: 13pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">2</span><span style="font-family: 宋体; color: #333333; font-size: 13pt; mso-ascii-font-family: Helvetica; mso-hansi-font-family: Helvetica; mso-bidi-font-family: Helvetica; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">位，解之间使用一个空格分隔,每个方程的解占一行。</span></p></div><h2>Sample Input</h2>
+			<div class=content><span class=sampledata>1
+1 -5 -4 20</span></div><h2>Sample Output</h2>
+			<div class=content><span class=sampledata>-2.00 2.00 5.00
+</span></div><h2>HINT</h2>
+			<div class=content><p><p><font color="#333333"><font size="4">记方程</font><span style="color: #333333; font-size: 13pt">f(x)=0</span></font><span style="color: #333333; font-size: 13pt">，若存在</span><span style="color: #333333; font-size: 13pt">2</span><span style="color: #333333; font-size: 13pt">个数</span><span style="color: #333333; font-size: 13pt">x1</span><span style="color: #333333; font-size: 13pt">和</span><span style="color: #333333; font-size: 13pt">x2</span><span style="color: #333333; font-size: 13pt">，且</span><span style="color: #333333; font-size: 13pt">x1&lt;x2</span><span style="color: #333333; font-size: 13pt">，</span><span style="color: #333333; font-size: 13pt">f(x1)*f(x2)&lt;0</span><span style="color: #333333; font-size: 13pt">，则在</span><span style="color: #333333; font-size: 13pt">(x1</span><span style="color: #333333; font-size: 13pt">，</span><span style="color: #333333; font-size: 13pt">x2)</span><span style="color: #333333; font-size: 13pt">之间一定有一个根。</span></p></p></div><center>[<a href='submitpage.php?cid=1006&pid=24&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1061'>Status</a>][<a href='bbs.php?pid=1061&cid=1006'>Web Board</a>]</center><div id=foot>
+ <!--<br>
+
+<a href="./"><span class=red>HOME</span></a>
+<a href="javascript:history.go(-1)"><span class=red>Back</span></a>
+
+<hr>
+-->
+<center>
+
+			<!-- 
+		<a href=setlang.php?lang=ko>한국어</a>&nbsp; 
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=fa>فارسی</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		<a href=setlang.php?lang=th>ไทย</a>
+		-->
+	
+	
+	<hr/>
+	<p>
+		All Copyright Reserved <a href='./'>ZISU ACM</a> TEAM(Based on HUSTOJ)<br>
+		<a href=gpl-2.0.txt><span class=green>GPL2.0</span></a> 2003-2011 <a href='http://code.google.com/p/hustoj/'>HUSTOJ Project</a> TEAM<br>
+		Anything about the Problems, Please Contact Admin:<a href="mailto:root@localhost">admin</a><br>
+		
+	</p>
+</center>
+</div><!--end foot-->
+</div><!--end main-->
+</body>
+</html>
+<!--not cached-->

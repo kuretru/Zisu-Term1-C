@@ -1,0 +1,57 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel=stylesheet href='./include/hoj.css' type='text/css'>
+</head>
+<body>
+<div id=profile >
+<script src="include/profile.php" ></script>
+</div><!--end profile-->
+<div  id=xx_logo ><img src=./image/xx_logo.jpg></div>
+<table width=100% class=toprow style="position:absolute; top: 120px; left: 0px"><tr align=center>
+	<td width=15%><a class=hd href='./'>Home</a>
+	<td width=15%><a class=hd href='./bbs.php?cid=1006'>Web Board</a>
+	<td width=15%><a class=hd href='./contest.php?cid=1006'>ProblemSet</a>
+	<td width=15%><a class=hd href='./contestrank.php?cid=1006'>Standing</a>
+	<td width=15%><a class=hd href='./status.php?cid=1006'>Status</a>
+	<td width=15%><a class=hd href='./conteststatistics.php?cid=1006'>Statistics</a>
+</tr></table>
+
+
+<div id=main>
+<title>Problem 13: 字符串处理 </title><center><h2>Problem 13: 字符串处理</h2><span class=green>Time Limit: </span>1 Sec&nbsp;&nbsp;<span class=green>Memory Limit: </span>128 MB<br><span class=green>Submit: </span>6&nbsp;&nbsp;<span class=green>Solved: </span>1<br>[<a href='submitpage.php?cid=1006&pid=13&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1204'>Status</a>][<a href='bbs.php?pid=1204&cid=1006'>Web Board</a>]</center><h2>Description</h2><div class=content><div>给定一个字符串，将字符串下标为奇数的字符右移到下一个奇数位置，最右边将移出字符串的字符绕回放到第一个奇数位置，下标为偶数的字符不动（注：字符串的长度大于等于2）。</div></div><h2>Input</h2><div class=content><p><span style="font-family: 宋体; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-bidi-font-family: 'Times New Roman'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">从键盘读入</span><span lang="EN-US" style="font-family: Calibri; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: 'Times New Roman'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-fareast-font-family: 宋体">1</span><span style="font-family: 宋体; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-bidi-font-family: 'Times New Roman'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">组字符串（长度小于</span><span lang="EN-US" style="font-family: Calibri; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: 'Times New Roman'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-fareast-font-family: 宋体">100</span><span style="font-family: 宋体; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-bidi-font-family: 'Times New Roman'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">）</span></p></div><h2>Output</h2><div class=content><p><span style="font-family: 宋体; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-bidi-font-family: 'Times New Roman'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">交换位置后的</span><span lang="EN-US" style="font-family: Calibri; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: 'Times New Roman'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-fareast-font-family: 宋体">1</span><span style="font-family: 宋体; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-bidi-font-family: 'Times New Roman'; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA">组字符串</span></p></div><h2>Sample Input</h2>
+			<div class=content><span class=sampledata>abcdefghijk</span></div><h2>Sample Output</h2>
+			<div class=content><span class=sampledata>kbadcfehgji</span></div><h2>HINT</h2>
+			<div class=content><p></p></div><center>[<a href='submitpage.php?cid=1006&pid=13&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1204'>Status</a>][<a href='bbs.php?pid=1204&cid=1006'>Web Board</a>]</center><div id=foot>
+ <!--<br>
+
+<a href="./"><span class=red>HOME</span></a>
+<a href="javascript:history.go(-1)"><span class=red>Back</span></a>
+
+<hr>
+-->
+<center>
+
+			<!-- 
+		<a href=setlang.php?lang=ko>한국어</a>&nbsp; 
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=fa>فارسی</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		<a href=setlang.php?lang=th>ไทย</a>
+		-->
+	
+	
+	<hr/>
+	<p>
+		All Copyright Reserved <a href='./'>ZISU ACM</a> TEAM(Based on HUSTOJ)<br>
+		<a href=gpl-2.0.txt><span class=green>GPL2.0</span></a> 2003-2011 <a href='http://code.google.com/p/hustoj/'>HUSTOJ Project</a> TEAM<br>
+		Anything about the Problems, Please Contact Admin:<a href="mailto:root@localhost">admin</a><br>
+		
+	</p>
+</center>
+</div><!--end foot-->
+</div><!--end main-->
+</body>
+</html>
+<!--not cached-->
