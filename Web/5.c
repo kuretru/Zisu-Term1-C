@@ -1,54 +1,54 @@
 #include <stdio.h>
 int main()
 {
-	int i, k, tmp, data[30][30];
-	int xmax, ymax;
-	scanf("%d", &k);
-	for(i = 0; i < k; i++)
+	int i, j, k;
+	int kk, m, n;
+	int x, y;
+	int result[20][31], data[30][30];
+	scanf("%d", &kk);
+	for(i = 0; i < kk; i++)
 	{
-		int xlen, ylen, x, y;
-		scanf("%d %d", &xlen, &ylen);
-		for(x = 0; x < xlen; x++)
+		scanf("%d %d", &m, &n);
+		result[i][30] = m;
+		for(j = 0; j < m; j++)
+			for(k = 0; k < n; k++)
+				scanf("%d", &data[j][k]);
+		x = 0;
+		y = 0;
+		for(j = 0; j < m; j++)
 		{
-			for(y = 0; y < ylen; y++)
+			x = 0;
+			for(k = 1; k < m; k++)
 			{
-				scanf("%d", &tmp);
-				data[x][y] = tmp;
+				if(data[j][k] > data[j][x])
+					x = k;
 			}
-			tmp = data[x][0];
-			for(y = 1; y < ylen; y++)
+			//printf("x %d\n", x);
+			y = 0;
+			for(k = 1; k < n; k++)
 			{
-				if(data[x][y] > tmp)
-					tmp = data[x][ y];
-				else if(y == ylen - 1)
-					tmp = -1;
+				if(data[x][k] > data[x][y])
+					y = k;
 			}
-			xmax = tmp;
-		}
-		for(x = 0; x < xlen; x++)
-		{
-			tmp = data[0][x];
-			for(y = 1; y < ylen; y++)
-			{
-				if(data[y][x] > tmp)
-					tmp = data[y][x];
-				else if(y == ylen - 1)
-					tmp = -1;
-			}
-			ymax = tmp;
+			//printf("y %d\n", y);
+			result[i][j] = data[x][y];
+			//printf("result %d\n", result[j]);
 		}
 	}
-	for(i = 0; i < k; i++)
+	for(i = 0; i < kk; i++)
 	{
-		if(xmax != ymax)
-			printf("%d %d\n", xmax, ymax);
-		else if(xmax == ymax)
+		n = -2000000000;
+		for(j = 0; j < result[i][30]; j++)
 		{
-			if(xmax != 0)
-				printf("%d\n", xmax);
-			else
-				printf("NO\n");
+			if(result[i][j] != n)
+			{
+				if(j != 0)
+					printf(" ");
+				n = result[i][j];
+				printf("%d", n);
+			}
 		}
+		printf("\n");
 	}
 	return 0;
 }
