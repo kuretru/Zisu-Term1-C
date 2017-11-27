@@ -5,7 +5,7 @@ int main()
 	int low, cur, high, count, pow, num;
 	int n, result[10] = {0};
 	scanf("%d", &n);
-	for(int i = 0; i < 10; i++)
+	for(i = 0; i < 10; i++)
 	{
 		num = n;
 		pow = 1;
