@@ -1,10 +1,10 @@
 #include <stdio.h>
 int main()
 {
-	int i;
+	int i, j;
 	int a, b, n;
 	int fn, fnn, fnnn;//fnn -> f(n-1),fnnn -> f(n-2)
-	int data[64];
+	int cycle, data[64];
 	while(1)
 	{
 		scanf("%d %d %d", &a, &b, &n);
@@ -16,22 +16,26 @@ int main()
 		fnn = 1;
 		data[0] = 1;
 		data[1] = 1;
-		i = 2;
-		while(i < n)
+		for(i = 2; i < n; i++)
 		{
-			if(data[0] == fnnn && data[1] == fnn)//找到了周期
+			fn = (a * fnn + b * fnnn) % 7;
+			for(j = 0; j < i - 2; j++)
 			{
-				if(i != 2)
+				if(data[j] == fnnn && data[j + 1] == fnn) //找到了周期
 				{
-					fn = data[n % (i - 2) - 1];//i-2 -> cycle
+					cycle = (n - j) % (i - 2 - j) - 1 + j;//i-2-j -> cycle
+					if((n - j) % (i - 2 - j) == 0)
+						cycle += i - 2 - j;
+					fn = data[cycle];
+					i = n;     //跳出循环
 					break;
 				}
 			}
-			fn = (a * fnn + b * fnnn) % 7;
 			fnnn = fnn;
 			fnn = fn;
-			data[i++] = fn;
-			if(fnnn == 0 && fnn == 0) //处理2个都为0的极特殊情况
+			if(i != n)
+				data[i] = fn;
+			if(fnnn == 0 && fnn == 0) //处理2个都为0的情况
 				break;
 		}
 		printf("%d\n", fn);
