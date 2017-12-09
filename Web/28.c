@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-void sort(int *, int *, int *);
-
 int main()
 {
 	int i, j, k, l;
@@ -9,7 +7,7 @@ int main()
 	int a, b, c;
 	int x, y, z;
 	int condition, max;
-	int result[20], data[600][4];
+	int data[600][4];
 	scanf("%d", &m);
 	for(i = 0; i < m; i++)
 	{
@@ -63,7 +61,7 @@ int main()
 			data[j][3] = data[j][2];
 			for(k = 0; k < j; k++)
 			{
-				if(data[j][0] > data[j][1] && data[j][1] > data[k][1])
+				if(data[j][0] > data[k][0] && data[j][1] > data[k][1])
 				{
 					if(data[k][3] + data[j][2] > data[j][3])
 						data[j][3] = data[k][3] + data[j][2];
@@ -76,9 +74,7 @@ int main()
 			if(data[j][3] > max)
 				max = data[j][3];
 		}
-		result[i] = max;
+		printf("%d\n", max);
 	}
-	for(i = 0; i < m; i++)
-		printf("%d\n", result[i]);
 	return 0;
 }
