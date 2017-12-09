@@ -13,7 +13,7 @@ int main()
 	}
 	for(i = 0; i < 26; i++)
 		word[i] = i + 'a';
-	for(i = 0; i < 26; i++)
+	for(i = 0; i < 25; i++)
 	{
 		for(j = 25; j > i; j--)
 		{
