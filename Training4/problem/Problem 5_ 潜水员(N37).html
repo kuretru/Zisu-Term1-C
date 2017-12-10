@@ -1,0 +1,73 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel=stylesheet href='./include/hoj.css' type='text/css'>
+</head>
+<body>
+<div id=profile >
+<script src="include/profile.php" ></script>
+</div><!--end profile-->
+<div  id=xx_logo ><img src=./image/xx_logo.jpg></div>
+<table width=100% class=toprow style="position:absolute; top: 120px; left: 0px"><tr align=center>
+	<td width=15%><a class=hd href='./'>Home</a>
+	<td width=15%><a class=hd href='./bbs.php?cid=1074'>Web Board</a>
+	<td width=15%><a class=hd href='./contest.php?cid=1074'>ProblemSet</a>
+	<td width=15%><a class=hd href='./contestrank.php?cid=1074'>Standing</a>
+	<td width=15%><a class=hd href='./status.php?cid=1074'>Status</a>
+	<td width=15%><a class=hd href='./conteststatistics.php?cid=1074'>Statistics</a>
+</tr></table>
+
+
+<div id=main>
+<title>Problem 5: 潜水员(N37) </title><center><h2>Problem 5: 潜水员(N37)</h2><span class=green>Time Limit: </span>1 Sec&nbsp;&nbsp;<span class=green>Memory Limit: </span>128 MB<br><span class=green>Submit: </span>48&nbsp;&nbsp;<span class=green>Solved: </span>11<br>[<a href='submitpage.php?cid=1074&pid=5&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1351'>Status</a>][<a href='bbs.php?pid=1351&cid=1074'>Web Board</a>]</center><h2>Description</h2><div class=content><p>潜水员为了潜水要使用特殊的装备，他有一个带2种气体的气缸：一个为氧气，一个为氮气。让潜水员下潜的深度需要各种数量的氧和氮。潜水员有一定数量的气缸。每个气缸都有重量和气体容量。潜水员为了完成他的工作需要特定数量的氧和氮。完成工作所需气缸的总重的最低限度是多少？<br>
+例如：潜水员有5个气缸。每行三个数字为：氧、氮的量和气缸的重量：<br>
+3 36 120<br>
+10 25 129<br>
+5 50 250<br>
+1 45 130<br>
+4 20 119<br>
+如果潜水员需要5升的氧和60升的氮，则总重量最小为249(1,2或者4,5号气缸)<br>
+你的任务是计算潜水员为了完成他的工作需要气缸的重量的最低值。</p></div><h2>Input</h2><div class=content><p>第一个数为m1(0＜m1＜=20)，表示后面跟有m1组测试数据。每组测试数据的第一行为m,n(1＜=m＜=20,1＜=n＜=70)，表示氧、氮各自需要的量。第二行为k(1＜=k＜=1000),表示气缸的个数。此后的k行，每行包括ai,bi,ci(1＜=ai＜=20,1＜=bi＜=70,1＜=ci＜=800)，分别表示第i个气缸里的氧、氮的容量及气缸重量。</p></div><h2>Output</h2><div class=content><p>对于每组测试数据，计算并输出潜水完成工作所需气缸重量总和的最低值，如果没有答案，则输出-1，每个输出占一行。</p></div><h2>Sample Input</h2>
+			<div class=content><span class=sampledata>1
+5 60
+5
+3 36 120
+10 25 129
+5 50 250
+1 45 130
+4 20 119
+</span></div><h2>Sample Output</h2>
+			<div class=content><span class=sampledata>249
+</span></div><h2>HINT</h2>
+			<div class=content><p><p></p></p></div><center>[<a href='submitpage.php?cid=1074&pid=5&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1351'>Status</a>][<a href='bbs.php?pid=1351&cid=1074'>Web Board</a>]</center><div id=foot>
+ <!--<br>
+
+<a href="./"><span class=red>HOME</span></a>
+<a href="javascript:history.go(-1)"><span class=red>Back</span></a>
+
+<hr>
+-->
+<center>
+
+			<!-- 
+		<a href=setlang.php?lang=ko>한국어</a>&nbsp; 
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=fa>فارسی</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		<a href=setlang.php?lang=th>ไทย</a>
+		-->
+	
+	
+	<hr/>
+	<p>
+		All Copyright Reserved <a href='./'>ZISU ACM</a> TEAM(Based on HUSTOJ)<br>
+		<a href=gpl-2.0.txt><span class=green>GPL2.0</span></a> 2003-2011 <a href='http://code.google.com/p/hustoj/'>HUSTOJ Project</a> TEAM<br>
+		Anything about the Problems, Please Contact Admin:<a href="mailto:root@localhost">admin</a><br>
+		
+	</p>
+</center>
+</div><!--end foot-->
+</div><!--end main-->
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel=stylesheet href='./include/hoj.css' type='text/css'>
+</head>
+<body>
+<div id=profile >
+<script src="include/profile.php" ></script>
+</div><!--end profile-->
+<div  id=xx_logo ><img src=./image/xx_logo.jpg></div>
+<table width=100% class=toprow style="position:absolute; top: 120px; left: 0px"><tr align=center>
+	<td width=15%><a class=hd href='./'>Home</a>
+	<td width=15%><a class=hd href='./bbs.php?cid=1074'>Web Board</a>
+	<td width=15%><a class=hd href='./contest.php?cid=1074'>ProblemSet</a>
+	<td width=15%><a class=hd href='./contestrank.php?cid=1074'>Standing</a>
+	<td width=15%><a class=hd href='./status.php?cid=1074'>Status</a>
+	<td width=15%><a class=hd href='./conteststatistics.php?cid=1074'>Statistics</a>
+</tr></table>
+
+
+<div id=main>
+<title>Problem 7: 兽径管理(TU11) </title><center><h2>Problem 7: 兽径管理(TU11)</h2><span class=green>Time Limit: </span>1 Sec&nbsp;&nbsp;<span class=green>Memory Limit: </span>128 MB<br><span class=green>Submit: </span>34&nbsp;&nbsp;<span class=green>Solved: </span>13<br>[<a href='submitpage.php?cid=1074&pid=7&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1386'>Status</a>][<a href='bbs.php?pid=1386&cid=1074'>Web Board</a>]</center><h2>Description</h2><div class=content><p>约翰农场的牛群希望能够在 N 个(1＜=N＜=200)草地之间任意移动。草地的编号由 1到N。草地之间有树林隔开。牛群希望能够选择草地间的路径，使牛群能够从任一 片草地移动到任一片其它草地。 牛群可在路径上双向通行。
+牛群并不能创造路径，但是他们会保有及利用已经发现的野兽所走出来的路径(以 下简称兽径)。每星期他们会选择并管理一些或全部已知的兽径当作通路。<br>
+牛群每星期初会发现一条新的兽径。他们接着必须决定管理哪些兽径来组成该周牛群移动的通路，使得牛群得以从任一草地移动到任一草地。牛群只能使用当周有被 管理的兽径做为通路。<br>
+牛群希望他们管理的兽径长度和为最小。牛群可以从所有他们知道的所有兽径中挑选出一些来管理。牛群可以挑选的兽径与它之前是否曾被管理无关。<br>
+兽径决不会是直线，因此连接两片草地之间的不同兽径长度可以不同。 此外虽然两条兽径或许会相交，但牛群非常的专注，除非交点是在草地内，否则不会在交点换到另外一条兽径上。<br>
+在每周开始的时候，牛群会描述他们新发现的兽径。如果可能的话，请找出可从任何一草地通达另一草地的一组需管理的兽径，使其兽径长度和最小。</p></div><h2>Input</h2><div class=content><p>输入的第一行包含两个用空白分开的整数 N 和 W。W 代表你的程序需要处理的周数. (1 ＜= W ＜= 6000)。
+接下来有W行数据，第i行数据，代表第i周新发现的兽径，由三个以空格分开的整数分别代表该兽径的两个端点 (两片草地的编号) 与该兽径的长度(1~10000)。一条兽径的两个端点一定不同。</p></div><h2>Output</h2><div class=content><p>每次读入新发现的兽径后，你的程序必须立刻输出一组兽径的长度和，此组兽径可从任何一草地通达另一草地，并使兽径长度和最小。如果不能找到一组可从任一草地通达另一草地的兽径，则输出 “-1”。</p></div><h2>Sample Input</h2>
+			<div class=content><span class=sampledata>4 6
+1 2 10
+1 3 8
+3 2 3
+1 4 3
+1 3 6
+2 1 2
+</span></div><h2>Sample Output</h2>
+			<div class=content><span class=sampledata>-1
+-1
+-1
+14
+12
+8
+</span></div><h2>HINT</h2>
+			<div class=content><p><p></p></p></div><center>[<a href='submitpage.php?cid=1074&pid=7&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1386'>Status</a>][<a href='bbs.php?pid=1386&cid=1074'>Web Board</a>]</center><div id=foot>
+ <!--<br>
+
+<a href="./"><span class=red>HOME</span></a>
+<a href="javascript:history.go(-1)"><span class=red>Back</span></a>
+
+<hr>
+-->
+<center>
+
+			<!-- 
+		<a href=setlang.php?lang=ko>한국어</a>&nbsp; 
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=fa>فارسی</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		<a href=setlang.php?lang=th>ไทย</a>
+		-->
+	
+	
+	<hr/>
+	<p>
+		All Copyright Reserved <a href='./'>ZISU ACM</a> TEAM(Based on HUSTOJ)<br>
+		<a href=gpl-2.0.txt><span class=green>GPL2.0</span></a> 2003-2011 <a href='http://code.google.com/p/hustoj/'>HUSTOJ Project</a> TEAM<br>
+		Anything about the Problems, Please Contact Admin:<a href="mailto:root@localhost">admin</a><br>
+		
+	</p>
+</center>
+</div><!--end foot-->
+</div><!--end main-->
+</body>
+</html>

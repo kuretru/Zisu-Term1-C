@@ -1,0 +1,79 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel=stylesheet href='./include/hoj.css' type='text/css'>
+</head>
+<body>
+<div id=profile >
+<script src="include/profile.php" ></script>
+</div><!--end profile-->
+<div  id=xx_logo ><img src=./image/xx_logo.jpg></div>
+<table width=100% class=toprow style="position:absolute; top: 120px; left: 0px"><tr align=center>
+	<td width=15%><a class=hd href='./'>Home</a>
+	<td width=15%><a class=hd href='./bbs.php?cid=1074'>Web Board</a>
+	<td width=15%><a class=hd href='./contest.php?cid=1074'>ProblemSet</a>
+	<td width=15%><a class=hd href='./contestrank.php?cid=1074'>Standing</a>
+	<td width=15%><a class=hd href='./status.php?cid=1074'>Status</a>
+	<td width=15%><a class=hd href='./conteststatistics.php?cid=1074'>Statistics</a>
+</tr></table>
+
+
+<div id=main>
+<title>Problem 8: 敌兵列阵（线段树问题）(TU26) </title><center><h2>Problem 8: 敌兵列阵（线段树问题）(TU26)</h2><span class=green>Time Limit: </span>1 Sec&nbsp;&nbsp;<span class=green>Memory Limit: </span>128 MB<br><span class=green>Submit: </span>13&nbsp;&nbsp;<span class=green>Solved: </span>7<br>[<a href='submitpage.php?cid=1074&pid=8&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1401'>Status</a>][<a href='bbs.php?pid=1401&cid=1074'>Web Board</a>]</center><h2>Description</h2><div class=content><p>C国的死对头A国这段时间正在进行军事演习，所以C国间谍头子Derek和他手下Tidy又开始忙乎了。A国在海岸线沿直线布置了N个工兵营地,Derek和Tidy的任务就是要监视这些工兵营地的活动情况。由于采取了某种先进的监测手段，所以每个工兵营地的人数C国都掌握的一清二楚,每个工兵营地的人数都有可能发生变动，可能增加或减少若干人手,但这些都逃不过C国的监视。<br>
+中央情报局要研究敌人究竟演习什么战术,所以Tidy要随时向Derek汇报某一段连续的工兵营地一共有多少人,例如Derek问:“Tidy,马上汇报第3个营地到第10个营地共有多少人!”Tidy就要马上开始计算这一段的总人数并汇报。但敌兵营地的人数经常变动，而Derek每次询问的段都不一样，所以Tidy不得不每次都一个一个营地的去数，很快就精疲力尽了，Derek对Tidy的计算速度越来越不满:"你个死肥仔，算得这么慢，我炒你鱿鱼!”Tidy想：“你自己来算算看，这可真是一项累人的工作!我恨不得你炒我鱿鱼呢!”无奈之下，Tidy只好打电话向计算机专家Windbreaker求救,Windbreaker说：“死肥仔，叫你平时做多点acm题和看多点算法书，现在尝到苦果了吧!”Tidy说："我知错了。。。"但Windbreaker已经挂掉电话了。Tidy很苦恼，这么算他真的会崩溃的，聪明的读者，你能写个程序帮他完成这项工作吗？不过如果你的程序效率不够高的话，Tidy还是会受到Derek的责骂的.
+</p></div><h2>Input</h2><div class=content><p>第一行一个整数T，表示有T组数据。<br>
+每组数据第一行一个正整数N（N＜=50000）,表示敌人有N个工兵营地，接下来有N个正整数,第i个正整数ai代表第i个工兵营地里开始时有ai个人（1＜=ai＜=50）。<br>
+接下来每行有一条命令，命令有4种形式：<br>
+(1) Add i j,i和j为正整数,表示第i个营地增加j个人（j不超过30）<br>
+(2)Sub i j ,i和j为正整数,表示第i个营地减少j个人（j不超过30）;<br>
+(3)Query i j ,i和j为正整数,i＜=j，表示询问第i到第j个营地的总人数;<br>
+(4)End 表示结束，这条命令在每组数据最后出现;<br>
+每组数据最多有40000条命令</p></div><h2>Output</h2><div class=content><p>对第i组数据,首先输出“Case i:”和回车,对于每个Query询问，输出一个整数并回车,表示询问的段中的总人数,这个数保持在int以内。</p></div><h2>Sample Input</h2>
+			<div class=content><span class=sampledata>1
+10
+1 2 3 4 5 6 7 8 9 10
+Query 1 3
+Add 3 6
+Query 2 7
+Sub 10 2
+Add 6 3
+Query 3 10
+End
+</span></div><h2>Sample Output</h2>
+			<div class=content><span class=sampledata>Case 1:
+6
+33
+59
+</span></div><h2>HINT</h2>
+			<div class=content><p><p></p></p></div><center>[<a href='submitpage.php?cid=1074&pid=8&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1401'>Status</a>][<a href='bbs.php?pid=1401&cid=1074'>Web Board</a>]</center><div id=foot>
+ <!--<br>
+
+<a href="./"><span class=red>HOME</span></a>
+<a href="javascript:history.go(-1)"><span class=red>Back</span></a>
+
+<hr>
+-->
+<center>
+
+			<!-- 
+		<a href=setlang.php?lang=ko>한국어</a>&nbsp; 
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=fa>فارسی</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		<a href=setlang.php?lang=th>ไทย</a>
+		-->
+	
+	
+	<hr/>
+	<p>
+		All Copyright Reserved <a href='./'>ZISU ACM</a> TEAM(Based on HUSTOJ)<br>
+		<a href=gpl-2.0.txt><span class=green>GPL2.0</span></a> 2003-2011 <a href='http://code.google.com/p/hustoj/'>HUSTOJ Project</a> TEAM<br>
+		Anything about the Problems, Please Contact Admin:<a href="mailto:root@localhost">admin</a><br>
+		
+	</p>
+</center>
+</div><!--end foot-->
+</div><!--end main-->
+</body>
+</html>

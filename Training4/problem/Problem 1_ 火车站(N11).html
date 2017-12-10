@@ -1,0 +1,61 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel=stylesheet href='./include/hoj.css' type='text/css'>
+</head>
+<body>
+<div id=profile >
+<script src="include/profile.php" ></script>
+</div><!--end profile-->
+<div  id=xx_logo ><img src=./image/xx_logo.jpg></div>
+<table width=100% class=toprow style="position:absolute; top: 120px; left: 0px"><tr align=center>
+	<td width=15%><a class=hd href='./'>Home</a>
+	<td width=15%><a class=hd href='./bbs.php?cid=1074'>Web Board</a>
+	<td width=15%><a class=hd href='./contest.php?cid=1074'>ProblemSet</a>
+	<td width=15%><a class=hd href='./contestrank.php?cid=1074'>Standing</a>
+	<td width=15%><a class=hd href='./status.php?cid=1074'>Status</a>
+	<td width=15%><a class=hd href='./conteststatistics.php?cid=1074'>Statistics</a>
+</tr></table>
+
+
+<div id=main>
+<title>Problem 1: 火车站(N11) </title><center><h2>Problem 1: 火车站(N11)</h2><span class=green>Time Limit: </span>1 Sec&nbsp;&nbsp;<span class=green>Memory Limit: </span>128 MB<br><span class=green>Submit: </span>305&nbsp;&nbsp;<span class=green>Solved: </span>105<br>[<a href='submitpage.php?cid=1074&pid=1&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1325'>Status</a>][<a href='bbs.php?pid=1325&cid=1074'>Web Board</a>]</center><h2>Description</h2><div class=content><p>火车从始发站（称为第1站）开出，在始发站上车的人数为a,然后到达第2站，在第2站有人上、下车，但上、下车的人数相同，因此在第2站开出时（即在到达第3站之前）车上的人数保持为a人，从第3站起（包含第3站）上、下车的人数有一定的规律：上车的人数是前两站上车人数之和，而下车人数等于上一站上车人数，一直到终点站的前一站（n-1站），都满足此规律。现给出的条件是：共有N个车站，始发站上车的人数为a，最后一站下车的人数是m（全部下车）。访问从x站开出时车上的人数是多少？若无解输出&ldquo;No answer.&rdquo;（所有数据均&lt;=2,000,000,000）</p></div><h2>Input</h2><div class=content><p>第一个数为k(0＜k＜=20)，表示后面跟有k组测试数据，每组测试数据一行。每组测试数包括四个整数 a,n(n＞2),m和x(1＜=x＜n)。</p></div><h2>Output</h2><div class=content><p>针对每组测试数据输出一个整数，表示x站开出时车上的人数。</p></div><h2>Sample Input</h2>
+			<div class=content><span class=sampledata>2
+1 6 7 3
+1 6 7 4
+</span></div><h2>Sample Output</h2>
+			<div class=content><span class=sampledata>2
+4
+</span></div><h2>HINT</h2>
+			<div class=content><p></p></div><center>[<a href='submitpage.php?cid=1074&pid=1&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1325'>Status</a>][<a href='bbs.php?pid=1325&cid=1074'>Web Board</a>]</center><div id=foot>
+ <!--<br>
+
+<a href="./"><span class=red>HOME</span></a>
+<a href="javascript:history.go(-1)"><span class=red>Back</span></a>
+
+<hr>
+-->
+<center>
+
+			<!-- 
+		<a href=setlang.php?lang=ko>한국어</a>&nbsp; 
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=fa>فارسی</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		<a href=setlang.php?lang=th>ไทย</a>
+		-->
+	
+	
+	<hr/>
+	<p>
+		All Copyright Reserved <a href='./'>ZISU ACM</a> TEAM(Based on HUSTOJ)<br>
+		<a href=gpl-2.0.txt><span class=green>GPL2.0</span></a> 2003-2011 <a href='http://code.google.com/p/hustoj/'>HUSTOJ Project</a> TEAM<br>
+		Anything about the Problems, Please Contact Admin:<a href="mailto:root@localhost">admin</a><br>
+		
+	</p>
+</center>
+</div><!--end foot-->
+</div><!--end main-->
+</body>
+</html>
