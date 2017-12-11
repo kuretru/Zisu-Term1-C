@@ -1,68 +1,48 @@
 #include <stdio.h>
 
-void quickSort(int data[], int left, int right);
+int contains(int number);
+
+int data[666667][2];
+int dcount;
 
 int main()
 {
-	int i, j, k;
+	int i, j;
 	int n, m;
-	int last, count;
-	int oneThird, max[2];
-	int result[100], data[100000];//change to 1000000
+	int number, index, max;
 	scanf("%d", &n);
-	for(i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
+		dcount = 0;
 		scanf("%d", &m);
-		for(j = 0; j < m; j++)
-			scanf("%d", &data[j]);
-		quickSort(data, 0, m - 1);
-		oneThird = m / 3;
-		max[0] = max[1] = 0;
-		last = data[0];
-		count = 1;
-		k = 0;
-		for(j = 1; j < m; j++)
+		for (j = 0; j < m; j++)
 		{
-			if(data[j] == last)
-			{
-				count++;
-				if(j == m - 1 && count > oneThird)
-					max[k++] = last;
-			}
+			scanf("%d", &number);
+			index = contains(number);
+			if (index > -1)
+				data[index][1]++;
 			else
 			{
-				if(count > oneThird)
-					max[k++] = last;
-				last = data[j];
-				count = 1;
+				data[dcount][0] = number;
+				data[dcount++][1] = 1;
 			}
 		}
-		if(max[1] > max[0])
-			result[i] = max[1];
-		else
-			result[i] = max[0];
+		max = 0;
+		for (j = 1; j < dcount; j++)
+		{
+			if (data[j][1] > data[max][1])
+				max = j;
+		}
+		printf("%d\n", data[max][0]);
 	}
-	for(i = 0; i < n; i++)
-		printf("%d\n", result[i]);
+	return 0;
 }
 
-void quickSort(int data[], int left, int right)
+int contains(int number)
 {
-	if(left >= right)
-		return;
-	int i = left;
-	int j = right;
-	int key = data[left];
-	while(i < j)
-	{
-		while(i < j && key <= data[j])
-			j--;
-		data[i] = data[j];
-		while(i < j && key >= data[i])
-			i++;
-		data[j] = data[i];
-	}
-	data[i] = key;
-	quickSort(data, left, i - 1);
-	quickSort(data, i + 1, right);
+	int i;
+	for (i = 0; i < dcount; i++)
+		if (data[i][0] == number)
+			return i;
+	return -1;
 }
