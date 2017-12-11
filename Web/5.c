@@ -1,117 +1,111 @@
 #include <stdio.h>
 
+int findXMax(int row);
+int findYMax(int column);
+
 int data[30][30];
-int findRowMax(int row, int rowCount);
-int findColumnMax(int column, int columnCount);
+int xCount, yCount;
 
 int main()
 {
-	int i, j, k;
-	int x, y, group;
-	int result[20][30][2], size[20][2];//0 for row(m) & 1 for column(n)
-	scanf("%d", &group);
-	for(i = 0; i < group; i++)
+	int groups;
+	scanf("%d", &groups);
+	for (int i = 0; i < groups; i++)
 	{
-		scanf("%d %d", &size[i][0], &size[i][1]);
-		for(j = 0; j < size[i][0]; j++)
-			for(k = 0; k < size[i][1]; k++)
+		int result[30][2];
+		scanf("%d %d", &xCount, &yCount);
+		for (int j = 0; j < xCount; j++)
+			for (int k = 0; k < yCount; k++)
 				scanf("%d", &data[j][k]);
-
-		//寻找峰值点坐标，并判断是否已存在
-		for(j = 0; j < size[i][0]; j++)
+		for (int j = 0; j < xCount; j++)
 		{
-			y = findRowMax(j, size[i][0]);
-			if(y != -1)
+			int column = findXMax(j);
+			int row = -1;
+			if (column > -1)
+				row = findYMax(column);
+			if (row != -1 && column != -1) //查重
 			{
-				x = findColumnMax(y, size[i][1]);
-				if(x != -1)
+				for (int k = 0; k < j; k++)
 				{
-					for(k = 0; k < j; k++)
+					if (result[k][0] == row && result[k][1] == column)
 					{
-						if(result[i][k][0] == x && result[i][k][1] == y)
-						{
-							x = -1;
-							y = -1;
-							break;
-						}
+						row = -1;
+						column = -1;
+						break;
 					}
 				}
 			}
-			result[i][j][0] = x;
-			result[i][j][1] = y;
+			result[j][0] = row;
+			result[j][1] = column;
 		}
-
-		//取出峰值点坐标值
-		for(j = 0; j < size[i][0]; j++)
+		for (int j = 0; j < xCount; j++)
 		{
-			x = result[i][j][0];
-			y = result[i][j][1];
-			if(x == -1 || y == -1)
-				result[i][j][1] = 0; //0 -> 该峰值点已存在或无峰值点
-			else
+			int x = result[j][0];
+			int y = result[j][1];
+			if (x > -1 && y > -1)
 			{
-				result[i][j][0] = data[x][y];
-				result[i][j][1] = 1; //1 -> 有峰值点
+				result[j][0] = 1;
+				result[j][1] = data[x][y];
 			}
+			else
+				result[j][0] = 0;
 		}
-	}
-	for(i = 0; i < group; i++)
-	{
-		k = 0;
-		for(j = 0; j < size[i][0]; j++)
+		int zero = 0;
+		for (int j = 0; j < xCount; j++)
 		{
-			if(result[i][j][1] == 1)
+			if (result[j][0] == 1)
 			{
-				if(k == 0)
-					k = 1;
+				if (zero == 0)
+					zero = 1;
 				else
 					printf(" ");
-				printf("%d", result[i][j][0]);
+				printf("%d", result[j][1]);
+			}
+			if (j == xCount - 1)
+			{
+				if (zero == 0)
+					printf("NO");
+				printf("\n");
 			}
 		}
-		if(k == 0)
-			printf("NO");
-		printf("\n");
 	}
 	return 0;
 }
 
-int findRowMax(int row, int rowCount)
+int findXMax(int row)
 {
-	int i, index, count = 0;
-	index = 0;
-	for(i = 1; i < rowCount; i++)
+	int max = 0;
+	for (int i = 1; i < yCount; i++)
 	{
-		if(data[row][i] > data[row][index])
-			index = i;
+		if (data[row][i] > data[row][max])
+			max = i;
 	}
-	for(i = 0; i < rowCount; i++)
+	int count = 0;
+	for (int i = 0; i < yCount; i++)
 	{
-		if(data[row][i] == data[row][index])
+		if (data[row][i] == data[row][max])
 			count++;
 	}
-	if(count > 1)
-		return -1;
-	else
-		return index;
+	if (count > 1)
+		max = -1;
+	return max;
 }
 
-int findColumnMax(int column, int columnCount)
+int findYMax(int column)
 {
-	int i, index, count = 0;
-	index = 0;
-	for(i = 1; i < columnCount; i++)
+	int max = 0;
+	for (int i = 1; i < xCount; i++)
 	{
-		if(data[i][column] > data[index][column])
-			index = i;
+		if (data[i][column] > data[max][column])
+			max = i;
 	}
-	for(i = 0; i < columnCount; i++)
+	int count = 0;
+	for (int i = 0; i < xCount; i++)
 	{
-		if(data[i][column] == data[index][column])
+		if (data[i][column] == data[max][column])
 			count++;
 	}
-	if(count > 1)
-		return -1;
-	else
-		return index;
+	if (count > 1)
+		max = -1;
+	return max;
 }
