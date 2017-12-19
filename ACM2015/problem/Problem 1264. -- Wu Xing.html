@@ -1,0 +1,118 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel=stylesheet href='./include/hoj.css' type='text/css'>
+</head>
+<body>
+<div  id=xx_logo ><img src=./image/xx_logo.jpg></div>
+<div id=broadcast>
+		<marquee  scrollamount=1 direction=up height=20 scrolldelay=250 style=text-align:center onMouseOver='this.stop()' onMouseOut='this.start()';>zisu online judge 2012-03-16 上线 支持C、C++语言提交<br>
+系统已支持java、pascal语言提交(2012-05-28)</marquee></div>
+
+<div id=subhead>
+<div id=menu >
+				&nbsp;&nbsp;&nbsp;
+		<div class=menu_item >
+		<a href="./">								Home										</a>
+		</div>&nbsp;&nbsp;&nbsp;
+		<div class=menu_item >
+		<a href="bbs.php">		Web Board</a>
+		</div>&nbsp;&nbsp;&nbsp;
+		<div class=menu_item >
+		<a href="problemset.php">		ProblemSet</a>
+		</div>&nbsp;&nbsp;&nbsp;
+		<div class=menu_item >
+		<a href="status.php">		Status</a>
+		</div>&nbsp;&nbsp;&nbsp;
+		<div class=menu_item >
+		<a href="ranklist.php">		Ranklist</a>
+		</div>&nbsp;&nbsp;&nbsp;
+		<div class=menu_item >
+		<a href="contest.php">		2<span class=red>&nbsp;Contest</span></a>
+		</div>&nbsp;&nbsp;&nbsp;
+		<div class=menu_item ><span style='color:orange'>		<a href="faqs.php">F.A.Qs</span></a>
+		</div>
+		
+			  </div>
+
+	<!--end menu-->
+<!--
+<div id=xx_lang>-->
+			<!--
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		 -->
+	<!--
+</div>-->
+<div id=profile >
+<script src="include/profile.php" ></script>
+</div><!--end profile-->
+</div><!--end subhead-->
+
+
+
+
+
+<div id=main>
+<title>Problem 1264. -- Wu Xing</title><center><h2>1264: Wu Xing</h2><span class=green>Time Limit: </span>2 Sec&nbsp;&nbsp;<span class=green>Memory Limit: </span>128 MB<br><span class=green>Submit: </span>3&nbsp;&nbsp;<span class=green>Solved: </span>3<br>[<a href='submitpage.php?id=1264'>Submit</a>][<a href='problemstatus.php?id=1264'>Status</a>][<a href='bbs.php?pid=1264'>Web Board</a>]</center><h2>Description</h2><div class=content>The Wu Xing, or the Five Movements, Five Phases or Five Steps/Stages, are chiefly an ancient mnemonic device, in many traditional Chinese fields.
+The doctrine of five phases describes two cycles, a generating or creation cycle, also known as "mother-son", and an overcoming or destruction cycle, also known as "grandfather-nephew", of interactions between the phases.
+Generating:<br>
+•Wood feeds Fire;<br>
+•Fire creates Earth (ash);<br>
+•Earth bears Metal;<br>
+•Metal carries Water (as in a bucket or tap, or water condenses on metal);<br>
+•Water nourishes Wood.<br>
+Overcoming:<br>
+•Wood parts Earth (such as roots) (or Trees can prevent soil erosion );<br>
+•Earth absorbs (or muddies) Water (or Earth dam control the water);<br>
+•Water quenches Fire;<br>
+•Fire melts Metal;<br>
+•Metal chops Wood.<br>
+<p><img src="upload/1264.jpg"></p>
+With the two types of interactions in the above graph, any two nodes are connected by an edge.
+Problem：
+In a graph with N nodes, to ensure that any two nodes are connected by at least one edge, how many types of interactions are required at least? Here a type of interaction should have the following properties:<br>
+•It can be represented as a set of directed edges in the graph.<br>
+•For each type of interaction, there should be one and only one edge starting at each node.<br>
+•For each type of interaction, there should be one and only one edge ending at each node.<br>
+•The interactions are made up of cycles, i.e. starting from an arbitrary node and following the edges with the same type of interaction, you can always reach the starting node after several steps.
+</div><h2>Input</h2><div class=content>For each test case, there's a line with an integer N (3 <= N < 1,000,000), the number of nodes in the graph.
+N = 0 indicates the end of input.
+</div><h2>Output</h2><div class=content>For each test case, output a line with the number of interactions that are required at least.</div><h2>Sample Input</h2>
+			<div class=content><span class=sampledata>5
+0</span></div><h2>Sample Output</h2>
+			<div class=content><span class=sampledata>2</span></div><h2>HINT</h2>
+			<div class=content><p><p></p></p></div><h2>Source</h2>
+			<div class=content><p><a href='problemset.php?search='></a></p></div><center>[<a href='submitpage.php?id=1264'>Submit</a>][<a href='problemstatus.php?id=1264'>Status</a>][<a href='bbs.php?pid=1264'>Web Board</a>]</center><div id=foot>
+ <!--<br>
+
+<a href="./"><span class=red>HOME</span></a>
+<a href="javascript:history.go(-1)"><span class=red>Back</span></a>
+
+<hr>
+-->
+<center>
+
+			<!-- 
+		<a href=setlang.php?lang=ko>한국어</a>&nbsp; 
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=fa>فارسی</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		<a href=setlang.php?lang=th>ไทย</a>
+		-->
+	
+	
+	<hr/>
+	<p>
+		All Copyright Reserved <a href='./'>ZISU ACM</a> TEAM(Based on HUSTOJ)<br>
+		<a href=gpl-2.0.txt><span class=green>GPL2.0</span></a> 2003-2011 <a href='http://code.google.com/p/hustoj/'>HUSTOJ Project</a> TEAM<br>
+		Anything about the Problems, Please Contact Admin:<a href="mailto:root@localhost">admin</a><br>
+		
+	</p>
+</center>
+</div><!--end foot-->
+</div><!--end main-->
+</body>
+</html>
+<!--not cached-->
