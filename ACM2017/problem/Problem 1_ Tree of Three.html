@@ -1,0 +1,73 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel=stylesheet href='./include/hoj.css' type='text/css'>
+</head>
+<body>
+<div id=profile >
+<script src="include/profile.php" ></script>
+</div><!--end profile-->
+<div  id=xx_logo ><img src=./image/xx_logo.jpg></div>
+<table width=100% class=toprow style="position:absolute; top: 120px; left: 0px"><tr align=center>
+	<td width=15%><a class=hd href='./'>Home</a>
+	<td width=15%><a class=hd href='./bbs.php?cid=1079'>Web Board</a>
+	<td width=15%><a class=hd href='./contest.php?cid=1079'>ProblemSet</a>
+	<td width=15%><a class=hd href='./contestrank.php?cid=1079'>Standing</a>
+	<td width=15%><a class=hd href='./status.php?cid=1079'>Status</a>
+	<td width=15%><a class=hd href='./conteststatistics.php?cid=1079'>Statistics</a>
+</tr></table>
+
+
+<div id=main>
+<title>Problem 1: Tree of Three </title><center><h2>Problem 1: Tree of Three</h2><span class=green>Time Limit: </span>1 Sec&nbsp;&nbsp;<span class=green>Memory Limit: </span>128 MB<br><span class=green>Submit: </span>1&nbsp;&nbsp;<span class=green>Solved: </span>1<br>[<a href='submitpage.php?cid=1079&pid=1&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1423'>Status</a>][<a href='bbs.php?pid=1423&cid=1079'>Web Board</a>]</center><h2>Description</h2><div class=content>Now we have a tree and some queries to deal with. Every node in the tree has a value on it. For one node A, we want to know the largest three values in all the nodes of the subtree whose root is node A. Node 0 is root of the tree, except it, all other nodes have a parent node.</div><h2>Input</h2><div class=content>There are several test cases. Each test case begins with a line contains one integer n(1 ≤ n ≤ 10000), which indicates the number of the node in the tree. The second line contains one integer v[0], the value on the root. Then for the following n - 1 lines(from the 3rd line to the (n + 1)th line), let i + 2 be the line number, then line i + 2 contains two integers parent and v[i], here parent is node i's parent node, v[i] is the value on node i. Here 0 ≤ v[i] ≤ 1000000. Then the next line contains an integer m(1 ≤ m ≤ 10000), which indicates the number of queries. Following m lines, each line contains one integer q, 0 ≤ q < n, it meas a query on node q.</div><h2>Output</h2><div class=content>For each test case, output m lines, each line contains one or three integers. If the query asked for a node that has less than three nodes in the subtree, output a "-1"; otherwise, output the largest three values in the subtree, from larger to smaller.</div><h2>Sample Input</h2>
+			<div class=content><span class=sampledata>5
+1
+0 10
+0 5
+2 7
+2 8
+5
+0
+1
+2
+3
+4
+</span></div><h2>Sample Output</h2>
+			<div class=content><span class=sampledata>10 8 7
+-1
+8 7 5
+-1
+-1
+</span></div><h2>HINT</h2>
+			<div class=content><p></p></div><center>[<a href='submitpage.php?cid=1079&pid=1&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1423'>Status</a>][<a href='bbs.php?pid=1423&cid=1079'>Web Board</a>]</center><div id=foot>
+ <!--<br>
+
+<a href="./"><span class=red>HOME</span></a>
+<a href="javascript:history.go(-1)"><span class=red>Back</span></a>
+
+<hr>
+-->
+<center>
+
+			<!-- 
+		<a href=setlang.php?lang=ko>한국어</a>&nbsp; 
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=fa>فارسی</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		<a href=setlang.php?lang=th>ไทย</a>
+		-->
+	
+	
+	<hr/>
+	<p>
+		All Copyright Reserved <a href='./'>ZISU ACM</a> TEAM(Based on HUSTOJ)<br>
+		<a href=gpl-2.0.txt><span class=green>GPL2.0</span></a> 2003-2011 <a href='http://code.google.com/p/hustoj/'>HUSTOJ Project</a> TEAM<br>
+		Anything about the Problems, Please Contact Admin:<a href="mailto:root@localhost">admin</a><br>
+		
+	</p>
+</center>
+</div><!--end foot-->
+</div><!--end main-->
+</body>
+</html>

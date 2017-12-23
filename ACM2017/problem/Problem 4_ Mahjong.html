@@ -1,0 +1,69 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel=stylesheet href='./include/hoj.css' type='text/css'>
+</head>
+<body>
+<div id=profile >
+<script src="include/profile.php" ></script>
+</div><!--end profile-->
+<div  id=xx_logo ><img src=./image/xx_logo.jpg></div>
+<table width=100% class=toprow style="position:absolute; top: 120px; left: 0px"><tr align=center>
+	<td width=15%><a class=hd href='./'>Home</a>
+	<td width=15%><a class=hd href='./bbs.php?cid=1079'>Web Board</a>
+	<td width=15%><a class=hd href='./contest.php?cid=1079'>ProblemSet</a>
+	<td width=15%><a class=hd href='./contestrank.php?cid=1079'>Standing</a>
+	<td width=15%><a class=hd href='./status.php?cid=1079'>Status</a>
+	<td width=15%><a class=hd href='./conteststatistics.php?cid=1079'>Statistics</a>
+</tr></table>
+
+
+<div id=main>
+<title>Problem 4: Mahjong </title><center><h2>Problem 4: Mahjong</h2><span class=green>Time Limit: </span>1 Sec&nbsp;&nbsp;<span class=green>Memory Limit: </span>128 MB<br><span class=green>Submit: </span>1&nbsp;&nbsp;<span class=green>Solved: </span>1<br>[<a href='submitpage.php?cid=1079&pid=4&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1425'>Status</a>][<a href='bbs.php?pid=1425&cid=1079'>Web Board</a>]</center><h2>Description</h2><div class=content>We consider a special mahjong. In this special mahjong, there are only ordinal number tiles(序数牌) ranging from 1 to 9, and each number has no more than 4 tiles.  
+“To win”(胡牌)  means a player’s tiles conform to the pattern AA + x * (ABC) + y * (AAA), in which AA/AAA represents two/three identical tiles, and ABC represents three consecutive serial tiles.   x and y can be any natural number. 
+“To wait”(听牌) means waiting for the one necessary tile to win. For example, 1 1 1 2 3 3 3，is waiting for 1, 2, 3 or 4. Waiting for 1：111 + 123 + 33; Waiting for 2：111 + 22 + 333; Waiting for 3：11 + 123 + 333; Waiting for 4：111 + 234 + 33.
+Given a set of tiles, please write a program to determine whether it is to wait or not.  The number of tiles in the set is 13-3*k (0≤k≤4).</div><h2>Input</h2><div class=content>The first line includes one integer: k 
+The following k lines are formatted as follows: the first integer n represents there are n tiles in the current set and is followed by tiles’ numbers.</div><h2>Output</h2><div class=content>If not “to wait”, print “NO!”; otherwise, print all the tiles to wait in an increasing order.</div><h2>Sample Input</h2>
+			<div class=content><span class=sampledata>4
+4 1 1 3 4
+7 1 2 4 5 7 7 8
+7 1 1 1 2 3 3 3
+10 1 2 3 4 4 5 6 7 8 9
+</span></div><h2>Sample Output</h2>
+			<div class=content><span class=sampledata>2 5
+NO!
+1 2 3 4
+1 4 7
+</span></div><h2>HINT</h2>
+			<div class=content><p></p></div><center>[<a href='submitpage.php?cid=1079&pid=4&langmask=0'>Submit</a>][<a href='problemstatus.php?id=1425'>Status</a>][<a href='bbs.php?pid=1425&cid=1079'>Web Board</a>]</center><div id=foot>
+ <!--<br>
+
+<a href="./"><span class=red>HOME</span></a>
+<a href="javascript:history.go(-1)"><span class=red>Back</span></a>
+
+<hr>
+-->
+<center>
+
+			<!-- 
+		<a href=setlang.php?lang=ko>한국어</a>&nbsp; 
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=fa>فارسی</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		<a href=setlang.php?lang=th>ไทย</a>
+		-->
+	
+	
+	<hr/>
+	<p>
+		All Copyright Reserved <a href='./'>ZISU ACM</a> TEAM(Based on HUSTOJ)<br>
+		<a href=gpl-2.0.txt><span class=green>GPL2.0</span></a> 2003-2011 <a href='http://code.google.com/p/hustoj/'>HUSTOJ Project</a> TEAM<br>
+		Anything about the Problems, Please Contact Admin:<a href="mailto:root@localhost">admin</a><br>
+		
+	</p>
+</center>
+</div><!--end foot-->
+</div><!--end main-->
+</body>
+</html>
