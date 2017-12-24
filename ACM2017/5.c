@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <string.h>
-char names[1000][20];
-int star[1000];
-int index[1000];
+struct student
+{
+    char name[20];
+    int score;
+} students[1000];
 int cmp(int x, int y)
 {
-    if (star[index[x]] != star[index[y]])
-        return star[index[x]] < star[index[y]];
+    if (students[x].score != students[y].score)
+        return students[x].score < students[y].score;
     else
     {
-        int result = strcmp(names[index[x]], names[index[y]]);
+        int result = strcmp(students[x].name, students[y].name);
         if (result == 1)
             return 1;
         else
@@ -21,23 +23,20 @@ int main()
     int count;
     scanf("%d\n", &count);
     for (int i = 0; i < count; i++)
-    {
-        scanf("%s %d", names[i], &star[i]);
-        index[i] = i;
-    }
+        scanf("%s %d", students[i].name, &students[i].score);
     for (int i = 0; i < count - 1; i++)
     {
         for (int j = 0; j < count - 1 - i; j++)
         {
             if (cmp(j, j + 1))
             {
-                int tmp = index[j];
-                index[j] = index[j + 1];
-                index[j + 1] = tmp;
+                struct student tmp = students[j];
+                students[j] = students[j + 1];
+                students[j + 1] = tmp;
             }
         }
     }
     for (int i = 0; i < count; i++)
-        printf("%s %d\n", names[index[i]], star[index[i]]);
+        printf("%s %d\n", students[i].name, students[i].score);
     return 0;
 }
