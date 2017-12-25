@@ -1,40 +1,38 @@
 #include <stdio.h>
+int count;
+float max, cost, result, data[21][2];
+void calc(int index, float remain, float sum)
+{
+    if (data[index][0] * cost > remain)
+        return;
+    if (index == count)
+    {
+        if (sum < result)
+            result = sum;
+        return;
+    }
+    remain -= data[index][0] * cost;
+    calc(index + 1, max, sum + (max - remain) * data[index][1]);
+    calc(index + 1, remain, sum);
+}
 int main()
 {
-	int i, groups;
-	float result[20] = {0};
-	float last;
-	scanf("%d", &groups);
-	for(i = 0; i < groups; i++)
-	{
-		int j, stations, gg = 0;
-		float max, remain, cost;
-		scanf("%d", &stations);
-		scanf("%f %f %f", &max, &remain, &cost);
-		for(j = 0; j < stations; j++)
-		{
-			float distance, price;
-			scanf("%f %f", &distance, &price);
-			if((remain - cost * distance) < 0)
-			{
-				gg = 1;
-				break;
-			}
-			result[i] += (max - (remain - cost * distance)) * price;
-			remain = max;
-		}
-		scanf("%f", &last);
-		if(last > remain)
-			gg = 1;
-		if(gg == 1)
-			result[i] = -1;
-	}
-	for(i = 0; i < groups; i++)
-	{
-		if(result[i] == -1)
-			printf("NO\n");
-		else
-			printf("%.2f\n", result[i]);
-	}
-	return 0;
+    int groups;
+    scanf("%d", &groups);
+    while (groups--)
+    {
+        float remain;
+        result = 2000000000;
+        scanf("%d", &count);
+        scanf("%f %f %f", &max, &remain, &cost);
+        for (int i = 0; i < count; i++)
+            scanf("%f %f", &data[i][0], &data[i][1]);
+        scanf("%f", &data[count][0]);
+        calc(0, remain, 0);
+        if (result != 2000000000)
+            printf("%.2f\n", result);
+        else
+            printf("NO\n");
+    }
+    return 0;
 }
