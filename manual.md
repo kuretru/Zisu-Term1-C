@@ -114,6 +114,9 @@ type name(parameter)
 * 使用pow()函数计算幂函数
 
 ## 指针
+* 在32位系统中，指针占用32位空间，存放着一个内存地址
+* [int *ptr]表示一个指向存放整形变量的内存地址
+* 数组实际存放的是首元素的地址
 
 ## 结构体
 * 使用.操作符访问结构体的成员
@@ -164,5 +167,16 @@ void sort(int data[], int length)
         data[min] = data[i];
         data[i] = tmp;
     }
+}
+```
+### 水仙花数
+```
+for (int i = 100; i < 1000; i++)
+{
+    int a = i / 100;
+    int b = (i - a * 100) / 10;
+    int c = i % 10;
+    if (a*a*a + b*b*b + c*c*c == i)
+        printf("%d\n", i);
 }
 ```
