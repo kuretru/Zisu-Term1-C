@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 int iswin(int data[])
 {
     int result = 1;
@@ -12,7 +13,7 @@ int iswin(int data[])
     }
     return result;
 }
-int removeABC(int data[])
+void removeABC(int data[])
 {
     for (int i = 1; i < 8; i++)
     {
@@ -28,39 +29,12 @@ int removeABC(int data[])
                 break;
         }
     }
-    return iswin(data);
 }
-int removeAAA(int data[])
-{
-    int newData[10];
-    for (int i = 1; i < 10; i++)
-        newData[i] = data[i];
-    for (int i = 1; i < 10; i++)
-        if (newData[i] >= 3)
-            newData[i] -= 3;
-    if (iswin(newData))
-        return 1;
-    else
-        return removeABC(newData);
-}
-int removeAA(int data[])
+void removeAAA(int data[])
 {
     for (int i = 1; i < 10; i++)
-    {
-        if (data[i] >= 2)
-        {
-            data[i] -= 2;
-            if (iswin(data))
-                return 1;
-            else if (removeAAA(data))
-            {
-                data[i] += 2;
-                return 1;
-            }
-            data[i] += 2;
-        }
-    }
-    return 0;
+        if (data[i] >= 3)
+            data[i] -= 3;
 }
 int main()
 {
@@ -69,36 +43,41 @@ int main()
     while (groups--)
     {
         int count, number;
-        int data[10] = {0}, result[10];
+        int data[10] = {0};
         scanf("%d", &count);
         for (int i = 0; i < count; i++)
         {
             scanf("%d", &number);
             data[number]++;
         }
-        count = 0;
+        int noanswer = 1;
         for (int i = 1; i < 10; i++)
         {
             data[i]++;
-            result[i] = removeAA(data);
-            if (result[i])
-                count++;
-            data[i]--;
-        }
-        if (count == 0)
-            printf("NO!");
-        else
-        {
-            for (int i = 1; i < 10; i++)
+            for (int j = 1; j < 10; j++)
             {
-                if (result[i])
+                if (data[j] >= 2)
                 {
-                    printf("%d", i);
-                    if (--count)
-                        printf(" ");
+                    int newdata[10];
+                    memcpy(newdata, data, 10 * sizeof(int));
+                    newdata[j] -= 2;
+                    removeAAA(newdata);
+                    removeABC(newdata);
+                    if (iswin(newdata))
+                    {
+                        if (noanswer)
+                            noanswer = 0;
+                        else
+                            printf(" ");
+                        printf("%d", i);
+                        break;
+                    }
                 }
             }
+            data[i]--;
         }
+        if (noanswer)
+            printf("NO!");
         printf("\n");
     }
     return 0;
