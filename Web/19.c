@@ -1,20 +1,15 @@
 #include <stdio.h>
 int main()
 {
-	int n, m, i, j, result[10];
-	scanf("%d", &m);
-	for(i = 0; i < m; i++)
+	int groups;
+	scanf("%d", &groups);
+	while (groups--)
 	{
-		scanf("%d", &n);
-		result[i] = 1;
-		for(j = 2; j <= n; j++)
-		{
-			result[i] *= j;
-		}
-	}
-	for(i = 0; i < m; i++)
-	{
-		printf("%d\n", result[i]);
+		int number, result = 1;
+		scanf("%d", &number);
+		for (int i = 2; i <= number; i++)
+			result *= i;
+		printf("%d\n", result);
 	}
 	return 0;
 }

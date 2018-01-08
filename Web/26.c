@@ -1,23 +1,28 @@
 #include <stdio.h>
 #include <string.h>
-int main()
+int getNumber(char data[])
 {
-	int i, j, num[2] = {0}, pow;
-	char str[2][200], c;
-	for(i = 0; i < 2; i++)
+	int result = 0;
+	int length = strlen(data);
+	int pow = 1;
+	for (int i = length - 1; i >= 0; i--)
 	{
-		gets(str[i]);
-		pow = 1;
-		for(j = strlen(str[i]) - 1; j >= 0; j--)
+		if (data[i] >= '0' && data[i] <= '9')
 		{
-			c = str[i][j];
-			if(c >= '0' && c <= '9')
-			{
-				num[i] += pow * (c - '0');
-				pow *= 10;
-			}
+			result += pow * (data[i] - '0');
+			pow *= 10;
 		}
 	}
-	printf("%d %d", num[0] / num[1], num[0] % num[1]);
+	return result;
+}
+int main()
+{
+	int a, b;
+	char texta[200], textb[200];
+	gets(texta);
+	gets(textb);
+	a = getNumber(texta);
+	b = getNumber(textb);
+	printf("%d %d", a / b, a % b);
 	return 0;
 }

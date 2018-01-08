@@ -1,34 +1,31 @@
 #include <stdio.h>
+struct people
+{
+	int number;
+	int year;
+	int month;
+	int day;
+} data[100];
 int main()
 {
-	int n, m, i, j, data[100][4], dic[100];
-	scanf("%d", &n);
-	for(i = 0; i < n; i++)
+	int count, questions;
+	scanf("%d", &count);
+	for (int i = 0; i < count; i++)
+		scanf("%d %d %d %d", &data[i].number, &data[i].year, &data[i].month, &data[i].day);
+	scanf("%d", &questions);
+	while (questions--)
 	{
-		scanf("%d %d %d %d", &data[i][0], &data[i][1], &data[i][2], &data[i][3]);
-	}
-	scanf("%d", &m);
-	for(i = 0; i < m; i++)
-	{
-		scanf("%d", &dic[i]);
-	}
-	for(i = 0; i < m; i++)
-	{
-		int key;
-		key = dic[i];
-		printf("%d ", key);
-		for(j = 0; j < n; j++)
+		int number;
+		scanf("%d", &number);
+		for (int i = 0; i < count; i++)
 		{
-			if(data[j][0] == key)
+			if (data[i].number == number)
 			{
-				printf("%d %d %d\n", data[j][1], data[j][2], data[j][3]);
+				printf("%d %d %d %d\n", data[i].number, data[i].year, data[i].month, data[i].day);
 				break;
 			}
-			if(j == n - 1)
-			{
-				printf("NONE\n");
-				break;
-			}
+			if (i == count - 1)
+				printf("%d NONE\n", number);
 		}
 	}
 	return 0;

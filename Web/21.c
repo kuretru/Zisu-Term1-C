@@ -12,7 +12,6 @@ int main()
 	{
 		tmp[i] = num % 10;
 		num /= 10;
-		//printf("%d %d %d %d\n", tmp[i], num, i, pow);
 		i++;
 		if(num < 1)
 			break;
@@ -24,7 +23,6 @@ int main()
 	{
 		num += tmp[i] * pow;
 		pow /= 10;
-		//printf("%d %d\n", tmp[i],  pow);
 		i++;
 		if(pow < 1)
 			break;
@@ -32,4 +30,5 @@ int main()
 	if(neg == 1)
 		num = -num;
 	printf("%d", num);
+	return 0;
 }
