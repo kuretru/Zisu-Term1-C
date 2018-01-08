@@ -7,16 +7,16 @@ int dcount;
 
 int main()
 {
-	int i, j;
-	int n, m;
-	int number, index, max;
-	scanf("%d", &n);
-	for (i = 0; i < n; i++)
+	int groups;
+	scanf("%d", &groups);
+	while (groups--)
 	{
+		int count;
 		dcount = 0;
-		scanf("%d", &m);
-		for (j = 0; j < m; j++)
+		scanf("%d", &count);
+		for (int i = 0; i < count; i++)
 		{
+			int number, index;
 			scanf("%d", &number);
 			index = contains(number);
 			if (index > -1)
@@ -27,11 +27,11 @@ int main()
 				data[dcount++][1] = 1;
 			}
 		}
-		max = 0;
-		for (j = 1; j < dcount; j++)
+		int max = 0;
+		for (int i = 1; i < dcount; i++)
 		{
-			if (data[j][1] > data[max][1])
-				max = j;
+			if (data[i][1] > data[max][1])
+				max = i;
 		}
 		printf("%d\n", data[max][0]);
 	}
@@ -40,8 +40,7 @@ int main()
 
 int contains(int number)
 {
-	int i;
-	for (i = 0; i < dcount; i++)
+	for (int i = 0; i < dcount; i++)
 		if (data[i][0] == number)
 			return i;
 	return -1;
